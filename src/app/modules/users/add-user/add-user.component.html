@@ -17,7 +17,7 @@
                     <div *ngIf="id.invalid && id.touched" class="mb-3 text-danger fw-bolder">*Invalid User Id</div>
                     <div class="form-floating mb-3">
                         <input #name="ngModel" name="name" [(ngModel)]="user.name" type="text" class="form-control"
-                            id="floatingInputName" placeholder="Employee Name" pattern="[a-zA-Z]*" required>
+                            id="floatingInputName" placeholder="Employee Name" pattern="[a-zA-Z ]*" required>
                         <label for="floatingInputName">Employee Name</label>
                     </div>
                     <div *ngIf="name.invalid && name.touched" class="mb-3 text-danger fw-bolder">*Invalid User Name

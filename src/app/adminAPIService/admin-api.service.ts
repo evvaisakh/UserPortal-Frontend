@@ -21,4 +21,16 @@ export class AdminAPIService {
       }
     })
   }
+
+  getAdminDetails() {
+    return this.http.get(`${this.server_url}/users/1`)
+  }
+
+  updateAdminDetails(adminDetails: any) {
+    return this.http.put(`${this.server_url}/users/1`, adminDetails)
+  }
+
+  isAuthorized() {
+    return !!sessionStorage.getItem("adminDetails")
+  }
 }

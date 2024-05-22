@@ -17,5 +17,16 @@ export class ApiService {
   getAllUsersAPI() {
     return this.http.get(`${this.server_url}/users`)
   }
-  
+
+  getAUserAPI(id: any) {
+    return this.http.get(`${this.server_url}/users/${id}`)
+  }
+
+  updateUserAPI(user: userModel) {
+    return this.http.put(`${this.server_url}/users/${user.id}`, user)
+  }
+
+  removeUserAPI(id: any) {
+    return this.http.delete(`${this.server_url}/users/${id}`)
+  }
 }

@@ -1,11 +1,40 @@
 <div class="container-fluid">
     <div class="row">
-        <div style="height: 90vh;width: fit-content;" class="col-lg-2 bg-secondary d-flex flex-column p-3">
+        <div *ngIf="sidebarStatus" style="height: auto;width: fit-content;"
+            class="col-lg-2 bg-secondary d-flex flex-column p-3">
             <a style="text-decoration: none;color: white;" class="mb-3 fw-bolder" routerLink="/dashboard">Home</a>
             <a style="text-decoration: none;color: white;" class="mb-3 fw-bolder" routerLink="/users">Users</a>
+            <button (click)="logout()" class="btn btn-link mt-auto text-decoration-none text-white fw-bolder">Logout</button>
         </div>
-        <div class="col-lg-10">
-            <h1>Welcome To User Portal</h1>
+        <div class="col">
+            <div class="row mt-2">
+                <div class="col-lg-8">
+                    <div style="height: 140px;background-image: url('https://tse1.mm.bing.net/th?id=OIP.QTMD-mnaS9ASLfczUreLrQHaCQ&pid=Api&P=0&h=180');background-size: cover;"
+                        class="banner rounded p-3 d-flex align-items-center shadow">
+                        <h1 class="fw-bolder text-primary-emphasis"><i (click)="menuClicked()"
+                                class="fa-solid fa-bars btn btn-outline-light"></i> Welcome,
+                            {{adminName}}</h1>
+                    </div>
+                    <div class="row mt-3 mb-3">
+                        <div class="col-lg-6">
+                            <app-calendar></app-calendar>
+                        </div>
+                        <div class="col-lg-6">
+                            <app-chart></app-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="height: 370px;" class="rounded p-2 border shadow">
+                        <app-edit-admin (onAdminChange)="adminChange($event)"></app-edit-admin>
+                    </div>
+                    <div style="height: 140px;background-image: url('https://static.vecteezy.com/system/resources/previews/000/664/771/original/banner-background-with-low-poly-design-vector.jpg');background-size: cover;"
+                        class="banner rounded mt-2 d-flex justify-content-center align-items-center shadow">
+                        <h1 class="fw-bolder text-primary"><i class="fa-solid fa-users text-info"></i> All
+                            Users : {{userCount}}</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
