@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AdminAPIService {
 
-  server_url: string = "http://localhost:3000"
+  server_url: string = "https://userportal-server.onrender.com"
   constructor(private http: HttpClient, private router: Router) { }
 
   authenticateAPI(email: string, password: string) {
